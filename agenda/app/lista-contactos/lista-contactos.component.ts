@@ -14,7 +14,15 @@ export class ListaContactosComponent {
     
     @Output() contactoSeleccionado: EventEmitter<Contacto> = new EventEmitter();
 
+    sentidoOrdenacion: string = "asc";
+
     notificarContactoSeleccionado(contacto: Contacto): void {
         this.contactoSeleccionado.emit(contacto);
+    }
+
+    cambiarOrden(): void {
+        this.sentidoOrdenacion = this.sentidoOrdenacion === "asc"
+            ? "desc"
+            : "asc";
     }
 }

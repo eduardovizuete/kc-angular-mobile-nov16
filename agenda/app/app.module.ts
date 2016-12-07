@@ -20,6 +20,11 @@ import { EjemplosPipesComponent } from "./ejemplos/pipes.component";
 import { DirectivaAtributoDirective } from "./ejemplos/directiva-atributo.directive";
 import { DirectivaComponent } from "./ejemplos/directiva.component";
 import { DirectivaEstructuralDirective } from "./ejemplos/directiva-estructural.directive";
+import {
+  EjemploInyeccion1ServiceProveedor,
+  EjemploInyeccion2ServiceProveedor,
+  EjemploInyeccion3Proveedor } from "./ejemplos/inyeccion.service";
+import { InyeccionComponent } from "./ejemplos/inyeccion.component";
 
 @NgModule({
   // Usamos 'imports' para importar otros módulos
@@ -45,14 +50,18 @@ import { DirectivaEstructuralDirective } from "./ejemplos/directiva-estructural.
     EjemplosPipesComponent,
     DirectivaAtributoDirective,
     DirectivaComponent,
-    DirectivaEstructuralDirective
+    DirectivaEstructuralDirective,
+    InyeccionComponent
   ],
   // En 'providers' añadimos todos los servicios de
   // nuestra aplicación.
   providers: [
     ContactosService,
     ContactosResolve,
-    SlicePipe
+    SlicePipe,
+    EjemploInyeccion1ServiceProveedor,
+    EjemploInyeccion2ServiceProveedor,
+    EjemploInyeccion3Proveedor
   ],
   // En 'bootstrap' indicamos el componente raíz de
   // nuestra aplicación.
@@ -60,7 +69,8 @@ import { DirectivaEstructuralDirective } from "./ejemplos/directiva-estructural.
     AppComponent
     //BindingComponent
     //EjemplosPipesComponent
-    // DirectivaComponent
+    //DirectivaComponent
+    //InyeccionComponent
   ]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
+import { SlicePipe } from "@angular/common";
 
 import { AppComponent }  from './app.component';
 import { ListaContactosComponent } from "./lista-contactos/lista-contactos.component";
@@ -15,6 +16,10 @@ import { NuevoContactoComponent } from "./nuevo-contacto/nuevo-contacto.componen
 import { BarraNavegacionComponent } from "./barra-navegacion/barra-navegacion.component";
 import { ContactosResolve } from "./contactos-resolve.service";
 import { OrdenPipe } from "./orden.pipe";
+import { EjemplosPipesComponent } from "./ejemplos/pipes.component";
+import { DirectivaAtributoDirective } from "./ejemplos/directiva-atributo.directive";
+import { DirectivaComponent } from "./ejemplos/directiva.component";
+import { DirectivaEstructuralDirective } from "./ejemplos/directiva-estructural.directive";
 
 @NgModule({
   // Usamos 'imports' para importar otros módulos
@@ -36,19 +41,26 @@ import { OrdenPipe } from "./orden.pipe";
     MisContactosComponent,
     NuevoContactoComponent,
     BarraNavegacionComponent,
-    OrdenPipe
+    OrdenPipe,
+    EjemplosPipesComponent,
+    DirectivaAtributoDirective,
+    DirectivaComponent,
+    DirectivaEstructuralDirective
   ],
   // En 'providers' añadimos todos los servicios de
   // nuestra aplicación.
   providers: [
     ContactosService,
-    ContactosResolve
+    ContactosResolve,
+    SlicePipe
   ],
   // En 'bootstrap' indicamos el componente raíz de
   // nuestra aplicación.
   bootstrap: [
     AppComponent
     //BindingComponent
+    //EjemplosPipesComponent
+    // DirectivaComponent
   ]
 })
 export class AppModule { }
